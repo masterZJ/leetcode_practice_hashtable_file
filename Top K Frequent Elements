@@ -17,10 +17,16 @@ def topKFrequent(self, nums, k):
     return list(itertools.chain(*bucket))[:k]
     
     或者
-    
-    def topKFrequent(nums, k):
-    bucket = [[] for _ in nums]
-    for num, freq in collections.Counter(nums).most_common():
-        print num,freq
-    
+class Solution(object):
+    def topKFrequent(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
+        p=[]
+        for i,_ in collections.Counter(nums).most_common()[:k]:
+            p.append(i)
+        return p 
+        
     
